@@ -6,7 +6,7 @@ from aiogram.filters import Command
 from aiogram.types import Message, ReplyKeyboardMarkup, KeyboardButton, InlineKeyboardMarkup, InlineKeyboardButton, \
     CallbackQuery, BotCommand
 from aiogram.types import BufferedInputFile
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt  bu kutubxona bizga hozirchalik kerak emas
 from io import BytesIO
 
 bot = Bot(token='7685705773:AAHRHRcxaIUTtXVNCqVCqA8X7QkaRF9xbdw')
@@ -39,21 +39,21 @@ async def top_chart(message: Message):
     users = [str(user[0]) for user in top]
     counts = [user[1] for user in top]
 
-    plt.figure(figsize=(10, 6))
-    plt.bar(users, counts, color='skyblue')
-    plt.xlabel("Foydalanuvchi ID")
-    plt.ylabel("Taklif qilganlar soni")
-    plt.title("Top 5 referal foydalanuvchilar")
-    plt.tight_layout()
-
-    buf = BytesIO()
-
-    plt.savefig(buf, format='png')
-    buf.seek(0)
-    plt.close()
-
-    photo = BufferedInputFile(buf.read(), filename="chart.png")
-    await message.answer_photo(photo, caption="🏆 TOP 5 foydalanuvchilar grafigi")
+    # plt.figure(figsize=(10, 6))
+    # plt.bar(users, counts, color='skyblue')
+    # plt.xlabel("Foydalanuvchi ID")
+    # plt.ylabel("Taklif qilganlar soni")
+    # plt.title("Top 5 referal foydalanuvchilar")
+    # plt.tight_layout()
+    #
+    # buf = BytesIO()
+    #
+    # plt.savefig(buf, format='png')
+    # buf.seek(0)
+    # plt.close()
+    #
+    # photo = BufferedInputFile(buf.read(), filename="chart.png")
+    # await message.answer_photo(photo, caption="🏆 TOP 5 foydalanuvchilar grafigi")
 
 
 
